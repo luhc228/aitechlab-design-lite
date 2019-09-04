@@ -1,0 +1,23 @@
+// This file provide scss variables
+
+// default color
+$white: $color-white;
+$black: $color-black;
+$transparent: $color-transparent;
+$primary-color: #5584ff;
+$background: #e8e8e8;
+
+@mixin secondaryBtn {
+  color: $primary-color;
+  border-color: $primary-color;
+}
+
+@mixin tableOperationSeperator {
+  .separator {
+    margin: 0 6px;
+    display: inline-block;
+    height: 12px;
+    vertical-align: middle;
+    background: $background;
+  }
+}

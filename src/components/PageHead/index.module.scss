@@ -1,0 +1,18 @@
+@import "../../common.scss";
+
+.container {
+  margin: 0 0 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $white;
+  border-radius: rem(6);
+
+  .title {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
