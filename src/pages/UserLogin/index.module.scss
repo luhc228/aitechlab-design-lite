@@ -1,42 +1,83 @@
-.container {
-  z-index: 9;
-  width: 400px;
-  padding: 40px;
-  background: #fff;
-  border-radius: 6px;
-}
+.userLogin {
+  .logo {
+    height: 32px;
+    margin-right: 10px;
+  }
 
-.title {
-  margin: 0 0 40px;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 500;
-  font-size: 28px;
-  text-align: center;
-}
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 368px;
+    margin: 0 auto;
+  }
 
-.formItem {
-  position: relative;
-  margin-bottom: 20px;
-}
+  .formItem {
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 25px;
 
-.inputIcon {
-  position: absolute;
-  top: 6px;
-  left: 10px;
-  color: #666;
-}
+    .inputIcon {
+      padding: 0 5px;
+    }
 
-.inputCol {
-  width: 100%;
-  padding-left: 20px;
-}
+    input {
+      height: 40px !important;
+      line-height: 40px !important;
+      font-size: 14px;
+    }
+  }
 
-.submitBtn {
-  width: 100%;
-}
+  .formItemCol {
+    position: relative;
+    margin-bottom: 5px;
+  }
 
-.tips {
-  display: block;
-  margin-top: 20px;
-  text-align: center;
+  .submitBtn {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    background: #3080fe;
+    border-radius: 4px;
+  }
+
+  .checkbox {
+    margin-left: 5px;
+  }
+
+  .account {
+    margin: 4px 0;
+    text-align: center;
+  }
+
+  .tips {
+    justify-content: center;
+  }
+
+  .tipsText {
+    color: #999;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .line {
+    margin: 0 8px;
+    color: #dcd6d6;
+  }
+
+  :global {
+    .next-input.next-input-single {
+      width: 368px;
+      height: 38px;
+      line-height: 38px;
+      input {
+        padding-left: 32px;
+        font-size: 13px;
+      }
+    }
+    .next-checkbox-label {
+      color: #999;
+      font-size: 13px;
+    }
+  }
 }
