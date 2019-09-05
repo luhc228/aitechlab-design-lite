@@ -1,11 +1,12 @@
 import React, { Suspense } from 'react';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import path from 'path';
+import Auth from '@/components/Auth';
 import PageLoading from '@/components/PageLoading';
 import routes from '@/config/routes';
 
 const RouteItem = (props) => {
-  const { redirect, path: routePath, component, key } = props;
+  const { redirect, path: routePath, component: Component, key, authorities } = props;
   if (redirect) {
     return (
       <Redirect
@@ -19,7 +20,11 @@ const RouteItem = (props) => {
   return (
     <Route
       key={key}
-      component={component}
+      render={componentProps => (
+        <Auth authorities={authorities}>
+          <Component {...componentProps} />
+        </Auth>
+      )}
       path={routePath}
     />
   );
@@ -42,12 +47,11 @@ const router = () => {
                       <Suspense fallback={<PageLoading />}>
                         <Switch>
                           {children.map((routeChild, idx) => {
-                            const { redirect, path: childPath, component } = routeChild;
+                            const { path: childPath, ...restProps } = routeChild;
                             return RouteItem({
                               key: `${id}-${idx}`,
-                              redirect,
                               path: childPath && path.join(route.path, childPath),
-                              component,
+                              ...restProps,
                             });
                           })}
                         </Switch>

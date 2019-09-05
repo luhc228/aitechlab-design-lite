@@ -32,6 +32,7 @@ const routerConfig = [
       {
         path: '/dashboard',
         component: Dashboard,
+        // authorities: ['admin'],
       },
       {
         path: '/',
