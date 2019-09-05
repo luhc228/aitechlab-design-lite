@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form, Message } from '@alifd/next';
@@ -9,8 +9,6 @@ const FormItem = Form.Item;
 const Icon = FoundationSymbol;
 
 function UserLogin(props) {
-  const formEl = useRef(null);
-
   const handleSubmit = (value, errors) => {
     if (errors) {
       console.log('errors', errors);
@@ -24,7 +22,7 @@ function UserLogin(props) {
   return (
     <div className={styles.userLogin}>
       <div className={styles.formContainer}>
-        <Form onSubmit={handleSubmit} ref={formEl}>
+        <Form onSubmit={handleSubmit}>
           <FormItem required requiredMessage='必填' className={styles.formItem}>
             <Input
               innerBefore={<Icon type='person' className={styles.inputIcon} />}
