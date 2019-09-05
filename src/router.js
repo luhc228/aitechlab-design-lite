@@ -35,7 +35,7 @@ const router = () => {
     <Router>
       <Switch>
         {routes.map((route, id) => {
-          const { component: RouteComponent, children, ...others } = route;
+          const { component: Layout, children, ...others } = route;
           return (
             <Route
               key={id}
@@ -43,7 +43,7 @@ const router = () => {
               component={(props) => {
                 return (
                   children ? (
-                    <RouteComponent key={id} {...props}>
+                    <Layout key={id} {...props}>
                       <Suspense fallback={<PageLoading />}>
                         <Switch>
                           {children.map((routeChild, idx) => {
@@ -56,8 +56,7 @@ const router = () => {
                           })}
                         </Switch>
                       </Suspense>
-
-                    </RouteComponent>
+                    </Layout>
                   ) : (
                       <>
                         {
