@@ -5,7 +5,7 @@ import UserLayout from '@/layouts/UserLayout';
 
 const UserLogin = React.lazy(() => import('@/pages/UserLogin'));
 const Dashboard = React.lazy(() => import('@/pages/Dashboard'));
-const NotFound = React.lazy(() => import('@/pages/NotFound'));
+const NotFound = React.lazy(() => import('@/pages/Exception/NotFound'));
 
 const routerConfig = [
   {
