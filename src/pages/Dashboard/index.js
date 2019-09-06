@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
-import WithUserInfo from '@/components/WithUserInfo';
 import { withRouter } from 'react-router-dom';
 import { Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import WithUserInfo from '@/components/WithUserInfo';
 import PageHead from '@/components/PageHead';
 import CustomTable from '@/components/CustomTable';
 import FilterForm from '@/components/FilterForm';
@@ -111,4 +111,4 @@ const Dashboard = (props) => {
   )
 };
 
-export default WithUserInfo(Dashboard);
+export default withRouter(WithUserInfo(Dashboard));

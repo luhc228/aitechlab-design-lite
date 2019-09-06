@@ -27,18 +27,23 @@ const renderFormItem = (config) => {
 };
 
 const FilterForm = ({ value, onChange, config, onSubmit }) => {
+  /**
+   * 
+   * @param {*} values 
+   * @param {*} error 
+   */
   const handleSubmit = (values, error) => {
     if (error) {
       return;
     }
-    const newValues = {};
 
-    Object.keys(values).forEach(item => {
-      if (values[item]) {
-        newValues[item] = values[item];
+    Object.entries(values).forEach(([key, value]) => {
+      if (value === '') {
+        delete values[key];
       }
     });
-    onSubmit(newValues);
+
+    onSubmit(values);
   };
 
   return (

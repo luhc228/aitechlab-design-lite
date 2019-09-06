@@ -1,3 +1,4 @@
+// create HOC
 import React from 'react';
 
 const WithUserInfo = WrapperComponent => props => {
